@@ -1,55 +1,45 @@
-// 1.Декларирај променливи од сите примитивни типови
-let name = 'Goran';
-let surname = 'Naumcheski';
-let city = 'Gostivar';
-let age = 24;
-let isCold = true;
-let  work = null;
-let workLocation = undefined;
+// Declare variables and use the assignment operators ( print the results)
 
-// испечати ги соодветно вредностите и типовите на променливите
-console.log(name + ' tip: ' + typeof(name));
-console.log(surname + ' tip: ' + typeof(surname));
-console.log(city + ' tip: ' + typeof(city));
-console.log(age + ' tip: ' + typeof(age));
-console.log(isCold + ' tip: ' + typeof(isCold));
-console.log(work + ' tip: ' + typeof(work));
-console.log(workLocation + ' tip: ' + typeof(workLocation));
+let varOne = 18;
+let varTwo = 16;
+let varThree = 14;
+let varFour = 12;
+let varFive = 10;
 
-// промени ја вредноста на некоја од променливите
+varOne %= 3;
+console.log(varFive);
 
-isCold = 'false';
-work = 'operater';
+varFour += 4;
+console.log(varFour);
 
-/* Креирај константа и обиди се да и доделиш нова вредност. Што се случува? 
-    дава error: Assignment to constant variable.
-const laptop = 'Dell';
-laptop = 'Asus'; 
-*/
+varThree -= 7;
+console.log(varThree);
 
-// декларирај променливи и употреби ги аритметичките оператори (да се испечатат резултатите)
-let num1 = 3;
-let num2 = 8;
+varTwo *= 3;
+console.log(varTwo);
 
-console.log(num1 + num2);
-console.log(num1 - num2);
-console.log(num1 / num2);
-console.log(num1 * num2);
-console.log(num1 % num2);
-console.log(num1++);
-console.log(num2--);
+varOne /= 3;
+console.log(varOne);
 
-// декларирај променливи и употреби ги операторите за споредба (да се испечатат резултатите)
-console.log(num1 <= num2);
-console.log(num1 == num2);
-console.log(num1 === num2);
-console.log(num1 != num2);
-console.log(num1 !== num2);
-console.log(num1 > num2);
-console.log(num1 >= num2);
-console.log(num1 < num2);
 
-// декларирај променливи и употреби ги логичките оператори (да се испечатат резултатите)
-console.log(num1 < num2 && num1 <= 2);
-console.log(num1 > num2 || num2 < 9);
-console.log(num1 > num2 && num2 <11);
+// Try out the two kind of alerts that have been studied.
+
+window.alert('Prv ALERT');
+alert('Vtor ALERT');
+let printOut = confirm('ALERTTTT');
+console.log(printOut);
+
+// Try out the different types of loggings in the console
+
+console.error('Ова е ерор лог');
+console.table(['Лимон', 'Круши', 'Киви']);
+console.log(['Банани', 'Мандарини', 'Ананас']);
+let fruits = {name: 'авокадо', year: 2020};
+console.dir(fruits);
+console.info('Homework 2 JavaScript');
+console.time('script');
+setTimeout(() => {
+     console.timeEnd('script');
+}, 7000);
+
+
