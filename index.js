@@ -1,76 +1,100 @@
-//1. Write a JavaScript conditional statement to sort three numbers. Print the result.
+// Create person object with properties firstName and lastName and add coresponding values.
 
-//2.Write a JavaScript conditional statement to find the largest of five numbers. Print the result.
+let person = {
+    firstName: 'Goran',
+    lastName: 'Naumcheski'
+};
 
-a=5;
-b=-2;
-c=7;
-d= 0;
-f=-1;
-if (a>b && a>c && a>d && a>f)
-{
-    console.log(a);
+
+// Print the values of the properties of the object. Use both approaches.
+
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person['firstName']);
+console.log(person['lastName']);
+
+
+// Print the whole firstName and lastName of the person.
+
+console.log(person.firstName + ' ' + person.lastName);
+
+
+// Add the property age and coresponding value to the person object. Use both approaches.
+
+person.age = 24;
+person['age'] = 24;
+
+
+// Print how old the person is.
+
+console.log(`The person is ${person.age} years old.`);
+
+
+// Find the type of the variable person.
+
+console.log(`The person variable is an ${typeof person}.`);
+
+
+// Create another person object. Populate the object with coresponding values.
+
+let person2 = {
+    firstName: 'Goran',
+    lastName: 'Pandev',
+    age: 37
 }
-else if (b>a && b>c && b>d && b>f)
-{
-    console.log(b);
-}
-else if (c>a && c>b && c>d && c>f)
-{
-    console.log(c);
-}
-else if (d>a && d>c && d>b && d>f)
-{
-    console.log(d);
-}
-else
-{
-    console.log(f);
+
+
+//8. Find out which person is older.
+
+if (person.age > person2.age) {
+    console.log(`${person.firstName} is older than ${person2.firstName}.`);
+} else if (person.age == person2.age) {
+    console.log(`${person.firstName} and ${person2.firstName} are the same age.`);
+} else if (person2.age > person.age) {
+    console.log(`${person2.firstName} is older than ${person.firstName}.`);
 }
 
 
-// For a given hour, print out the corresponding greeting (Good morning, Good afternoon, Good evening)
+//9. Find out how many years the person1 is older/younger from person2.
 
-function myFunction() {
-    var greeting;
-    var time = new Date().getHours();
-    if (time < 10) {
-      greeting = "Добро утро!";
-    } else if (time < 20) {
-      greeting = "Добар ден!";
-    } else {
-      greeting = "Добра вечер!";
-    }
-    document.getElementById("demo").innerHTML = greeting;
-  }
-  
-  //For a given month, print out in which season it belongs.
+let ageDiff;
 
-
-  function getSeason() {
-    month = document.forms.date.month.value;
-    season = '';
-    switch(month) {
-        case '12':
-        case '1':
-        case '2':
-            season = 'Зима';
-        break;
-        case '3':
-        case '4':
-        case '5':
-            season = 'Пролет';
-        break;
-        case '6':
-        case '7':
-        case '8':
-            season = 'Лето';
-        break;
-        case '9':
-        case '10': 
-        case '11':
-            season = 'Есен';
-        break;
-    }
-    alert(season);
+if (person.age > person2.age) {
+    ageDiff = person.age - person2.age;
+    console.log(`${person.firstName} is ${ageDiff} years older than ${person2.firstName}.`);
+} else if 
+(person.age == person2.age) {
+    ageDiff = 0;
+    console.log(`Both ${person.firstName} and ${person2.firstName} are the same age.`);
+} 
+else if (person2.age > person.age) {
+    ageDiff = person2.age - person.age;
+    console.log(`${person2.firstName} is ${ageDiff} years older than ${person.firstName}.`);
 }
+
+
+//10. Create another peson object. Populate the object with coresponding values.
+
+let person3 = {
+    firstName: 'Darko',
+    lastName: 'Dimitrieski',
+    age: 25
+}
+
+
+//11. Find the sum of the years of the people.
+
+let ageSum;
+ageSum = person.age + person2.age + person3.age;
+console.log(`The sum of all the person objects ages is ${ageSum}`);
+
+
+//12. Find the average of the years of the people.
+
+let ageAvg;
+ageAvg = ageSum / 3;
+console.log(`The average of all people ages is ${ageAvg}`);
+
+
+//  Find out who is the youngest of all three people.
+
