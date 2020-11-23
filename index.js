@@ -1,100 +1,132 @@
-// Create person object with properties firstName and lastName and add coresponding values.
+let people = [
+    {fname: 'David', lname: 'Rayy', age: 34}, 
+    {fname: 'Suzanne', lname: 'Collins', age: 38}, 
+    {fname: 'Walter', lname: 'Isaacson', age: 24}, 
+    {fname: 'John', lname: 'Doe', age: 51}, 
+    {fname: 'Jane', lname: 'Donnson', age: 20}
+];
 
-let person = {
-    firstName: 'Goran',
-    lastName: 'Naumcheski'
+// Calculate the sum of the ages - people array
+const sum = people.reduce((a,{age}) => a + age,0);
+console.log(sum);
+
+//Find the people that are older than 36
+
+for (let i = 0; i < people.length; i++) {
+    if (people[i].age > 36) {
+        console.log('Older than 36 are: ' + people[i].fname);
+    }
+}
+
+// Find the people that are smaller than 24
+
+for (i = 0; i < people.length; i ++) {
+    if (people[i].age < 24) {
+        console.log('Smaller than 24 is: ' + people[i].fname)
+    }
+}
+
+// Find the person with the longest name
+let pNames = [];
+
+for (let i = 0; i < people.length; i++) {
+    pNames.push(people[i]['fname'])
+    
 };
 
+pNames.sort((a, b) => {
+    return b.length - a.length;
+});
 
-// Print the values of the properties of the object. Use both approaches.
-
-console.log(person.firstName);
-console.log(person.lastName);
-console.log(person['firstName']);
-console.log(person['lastName']);
+console.log(`${pNames[0]} has the longest name.`);
 
 
-// Print the whole firstName and lastName of the person.
-
-console.log(person.firstName + ' ' + person.lastName);
 
 
-// Add the property age and coresponding value to the person object. Use both approaches.
-
-person.age = 24;
-person['age'] = 24;
 
 
-// Print how old the person is.
-
-console.log(`The person is ${person.age} years old.`);
 
 
-// Find the type of the variable person.
-
-console.log(`The person variable is an ${typeof person}.`);
 
 
-// Create another person object. Populate the object with coresponding values.
+numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
 
-let person2 = {
-    firstName: 'Goran',
-    lastName: 'Pandev',
-    age: 37
+// Multiply every element by 3 
+let byThree = numbers.map(number => {
+    return number * 3;
+});
+console.log(byThree);
+
+// Sort the numbers (ascending and descending)
+numbers.sort((a,b) => {
+    //console.log(a);
+    //console.log(b);
+    return a-b;
+});
+console.log(numbers);
+
+numbers.sort((a,b) => {
+    //console.log(a);
+    //console.log(b);
+    return b-a;
+});
+console.log(numbers);
+
+// // Find the sum of the numbers
+// var numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
+// var sum = numbers.reduce(function (a,b) {
+//     return a +b;
+    
+// },0);
+// console.log(sum);
+
+//Find max and min in the array
+var arr = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
+var max = arr.reduce(function(a, b) {
+    return Math.max(a, b);
+});
+console.log(max);
+
+//min in the array
+var arr = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
+var min = arr.reduce(function(a, b) {
+    return Math.min(a, b);
+});
+console.log(min);
+
+// Find second largest element in the array
+numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
+secondLargest = numbers.slice(0).sort(function(a,b){return b-a})[1]; 
+console.log(secondLargest);
+
+// Find the total numbers of even and odd elements in the array
+numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
+
+liste(numbers);
+
+function liste(arr) {
+  var sumOdd = 0;
+  var sumPar = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      sumPar++;
+    } else {
+      sumOdd++;
+    }
+  }
+  
+  console.log("Odd : " + sumOdd);
+  console.log("Even : " + sumPar);
+}
+
+// Given an array loop throught it and display numbers which are divisible by 5 and if you find number greater than 150 stop the loop iteration
+array = [12, 15, 32, 42, 55, 75, 122, 132, 150, 180, 200]
+for (i = 0; i < array.length; i++){
+    if (array[i] % 5 == 0 && array[i] <= 150) {
+        console.log(array[i]);
+    }
 }
 
 
-//8. Find out which person is older.
-
-if (person.age > person2.age) {
-    console.log(`${person.firstName} is older than ${person2.firstName}.`);
-} else if (person.age == person2.age) {
-    console.log(`${person.firstName} and ${person2.firstName} are the same age.`);
-} else if (person2.age > person.age) {
-    console.log(`${person2.firstName} is older than ${person.firstName}.`);
-}
-
-
-//9. Find out how many years the person1 is older/younger from person2.
-
-let ageDiff;
-
-if (person.age > person2.age) {
-    ageDiff = person.age - person2.age;
-    console.log(`${person.firstName} is ${ageDiff} years older than ${person2.firstName}.`);
-} else if 
-(person.age == person2.age) {
-    ageDiff = 0;
-    console.log(`Both ${person.firstName} and ${person2.firstName} are the same age.`);
-} 
-else if (person2.age > person.age) {
-    ageDiff = person2.age - person.age;
-    console.log(`${person2.firstName} is ${ageDiff} years older than ${person.firstName}.`);
-}
-
-
-//10. Create another peson object. Populate the object with coresponding values.
-
-let person3 = {
-    firstName: 'Darko',
-    lastName: 'Dimitrieski',
-    age: 25
-}
-
-
-//11. Find the sum of the years of the people.
-
-let ageSum;
-ageSum = person.age + person2.age + person3.age;
-console.log(`The sum of all the person objects ages is ${ageSum}`);
-
-
-//12. Find the average of the years of the people.
-
-let ageAvg;
-ageAvg = ageSum / 3;
-console.log(`The average of all people ages is ${ageAvg}`);
-
-
-//  Find out who is the youngest of all three people.
 
