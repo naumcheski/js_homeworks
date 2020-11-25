@@ -1,132 +1,58 @@
-let people = [
-    {fname: 'David', lname: 'Rayy', age: 34}, 
-    {fname: 'Suzanne', lname: 'Collins', age: 38}, 
-    {fname: 'Walter', lname: 'Isaacson', age: 24}, 
-    {fname: 'John', lname: 'Doe', age: 51}, 
-    {fname: 'Jane', lname: 'Donnson', age: 20}
-];
-
-// Calculate the sum of the ages - people array
-const sum = people.reduce((a,{age}) => a + age,0);
-console.log(sum);
-
-//Find the people that are older than 36
-
-for (let i = 0; i < people.length; i++) {
-    if (people[i].age > 36) {
-        console.log('Older than 36 are: ' + people[i].fname);
-    }
-}
-
-// Find the people that are smaller than 24
-
-for (i = 0; i < people.length; i ++) {
-    if (people[i].age < 24) {
-        console.log('Smaller than 24 is: ' + people[i].fname)
-    }
-}
-
-// Find the person with the longest name
-let pNames = [];
-
-for (let i = 0; i < people.length; i++) {
-    pNames.push(people[i]['fname'])
-    
-};
-
-pNames.sort((a, b) => {
-    return b.length - a.length;
-});
-
-console.log(`${pNames[0]} has the longest name.`);
-
-
-
-
-
-
-
-
-
-
-numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-
-// Multiply every element by 3 
-let byThree = numbers.map(number => {
-    return number * 3;
-});
-console.log(byThree);
-
-// Sort the numbers (ascending and descending)
-numbers.sort((a,b) => {
-    //console.log(a);
-    //console.log(b);
-    return a-b;
-});
-console.log(numbers);
-
-numbers.sort((a,b) => {
-    //console.log(a);
-    //console.log(b);
-    return b-a;
-});
-console.log(numbers);
-
-// // Find the sum of the numbers
-// var numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-// var sum = numbers.reduce(function (a,b) {
-//     return a +b;
-    
-// },0);
-// console.log(sum);
-
-//Find max and min in the array
-var arr = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-var max = arr.reduce(function(a, b) {
-    return Math.max(a, b);
-});
-console.log(max);
-
-//min in the array
-var arr = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-var min = arr.reduce(function(a, b) {
-    return Math.min(a, b);
-});
-console.log(min);
-
-// Find second largest element in the array
-numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-secondLargest = numbers.slice(0).sort(function(a,b){return b-a})[1]; 
-console.log(secondLargest);
-
-// Find the total numbers of even and odd elements in the array
-numbers = [1, 4, 24, 67, 1029, 340, 5, 200, 36];
-
-liste(numbers);
-
-function liste(arr) {
-  var sumOdd = 0;
-  var sumPar = 0;
-
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 === 0) {
-      sumPar++;
-    } else {
-      sumOdd++;
-    }
-  }
+// 1. Write a function to find first and last digit of a number.
   
-  console.log("Odd : " + sumOdd);
-  console.log("Even : " + sumPar);
+function number (num) {
+    return num % 10;
+   
 }
+let lastDigit = number (51203516);
+console.log(lastDigit);
 
-// Given an array loop throught it and display numbers which are divisible by 5 and if you find number greater than 150 stop the loop iteration
-array = [12, 15, 32, 42, 55, 75, 122, 132, 150, 180, 200]
-for (i = 0; i < array.length; i++){
-    if (array[i] % 5 == 0 && array[i] <= 150) {
-        console.log(array[i]);
-    }
+
+// Write a function to reverse the following array using .reverse array method
+let array = [10, 20, 30, 40, 50];
+let arrayTwo = [].concat(array).reverse();
+console.log(arrayTwo);
+
+// 3.Write a functions to calculate the perimeter and the area of a square
+//calculate perimeter
+function perimeterSquare (a) {
+    return 4*a;
 }
+let resultPerimeter = perimeterSquare (7);
+console.log('The perimeter of a square is: ' + resultPerimeter);
+//calculate area
+function areaSquare (b) {
+    return Math.pow(b,2);
+}
+let resultArea = areaSquare (3);
+console.log('Area of a square is : ' + resultArea);
+
+// 4. Write a functions to calculate the perimeter and the area of a rectangle
+function perimeterRectangle (a,b) {
+    return 2*a + 2*b;
+}
+let Perimeter = perimeterRectangle (7,9);
+console.log ('Rectangle perimeter: ' + Perimeter);
+
+function areaRectangle (w,h) {
+    return w*h;
+}
+let resultAreaR = areaRectangle (3,6);
+console.log('Rectangle area : ' + resultAreaR);
+
+// 5. Write a functions to calculate the perimeter and the area of a circle
+function perimeterCircle (r) {
+    const pi = 3.14;
+    return pi*(2*r)
+}
+let resultPerimeterC = perimeterCircle (6);
+console.log('Circle perimeter: ' + resultPerimeterC);
 
 
+function areaCircle (r) {
+    const pi = 3.14;
+    return pi * Math.pow(r,2);
+}
+let resultAreaCir = areaCircle (9);
+console.log('circle area : ' + resultAreaCir);
 
